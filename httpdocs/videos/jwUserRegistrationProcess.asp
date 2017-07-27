@@ -54,8 +54,8 @@ If (Request.ServerVariables("CONTENT_LENGTH") <> 0) Then
     
         Set jwConn = Server.CreateObject("ADODB.Connection")
         jwConn.Open hdDSN
-        qSQL = "INSERT INTO jwUsers (userUsername, userPassword, userProgram, userFirstName, userLastName, userDOB, userAddress, userCity, userState, userZip, userEmail, userCell) VALUES ('" & jwRegistrationUsername & "', '" & jwRegistrationPassword & "', '" & programCapture & "', '" & jwFirstName & "', '" & jwLastName & "', '" & jwDOB & "', '" & jwAddress & "', '" & jwCity & "', '" & jwState & "', '" & jwZip & "', '" & jwEmail & "', '" & jwCellNumber & "')"
-        ' jwConn.Execute(qSQL)
+        qSQL = "INSERT INTO jwUsers (userUsername, userPassword, userProgram, userFirstName, userLastName, userDOB, userAddress, userCity, userState, userZip, userEmail, userCell) VALUES ('hi', 'hi', 'hi', 'hi', 'hi', 'hi', 'hi', 'hi', 'hi', 'hi', 'hi', 'hi')"
+        jwConn.Execute(qSQL)
         Response.Redirect("login.asp")  
         jwConn.Close
         Set jwConn = Nothing
