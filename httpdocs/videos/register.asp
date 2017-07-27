@@ -1,4 +1,7 @@
 <!--#include virtual="/includes/global.asp" -->
+<%
+   Response.Redirect("login.asp") 
+%>
 <!DOCTYPE HTML>
 <html>
 <head>
