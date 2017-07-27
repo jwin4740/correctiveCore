@@ -34,7 +34,7 @@ If (Request.ServerVariables("CONTENT_LENGTH") <> 0) Then
     jwCity = Request.Form("jwCity")
     jwState = Request.Form("jwState")
     jwZip = Request.Form("jwZip")
-    jwEmail = Request.Form("jwFirstEmail")
+    jwEmail = Request.Form("jwEmail")
     jwCellNumber = Request.Form("jwCellNumber")
 
 
@@ -50,17 +50,16 @@ If (Request.ServerVariables("CONTENT_LENGTH") <> 0) Then
 
     
       
-    ' If Session("jwUserRegistrationErrorMsg") = "" Then
+    If Session("jwUserRegistrationErrorMsg") = "" Then
     
-    '     Set jwConn = Server.CreateObject("ADODB.Connection")
-    '     jwConn.Open hdDSN
-    '     qSQL = "INSERT INTO jwUsers (userUsername, userPassword, userProgram, userFirstName, userLastName, userDOB, userAddress, userCity, userState, userZip, userEmail, userCell) 
-    '     VALUES ('" & jwRegistrationUsername & "', '" & jwRegistrationPassword & "', '" & programCapture & "', '" & jwFirstName & "', '" & jwLastName & "', '" & jwDOB & "', '" & jwAddress & "', '" & jwCity & "', '" & jwState & "', '" & jwZip & "', '" & jwEmail & "', '" & jwCellNumber & "')"
-    '     jwConn.Execute(qSQL)
-    '     Response.Redirect("login.asp")  
-    '     jwConn.Close
-    '     Set jwConn = Nothing
-    ' End If  
+        Set jwConn = Server.CreateObject("ADODB.Connection")
+        jwConn.Open hdDSN
+        qSQL = "INSERT INTO jwUsers (userUsername, userPassword, userProgram, userFirstName, userLastName, userDOB, userAddress, userCity, userState, userZip, userEmail, userCell) VALUES ('" & jwRegistrationUsername & "', '" & jwRegistrationPassword & "', '" & programCapture & "', '" & jwFirstName & "', '" & jwLastName & "', '" & jwDOB & "', '" & jwAddress & "', '" & jwCity & "', '" & jwState & "', '" & jwZip & "', '" & jwEmail & "', '" & jwCellNumber & "')"
+        ' jwConn.Execute(qSQL)
+        Response.Redirect("login.asp")  
+        jwConn.Close
+        Set jwConn = Nothing
+    End If  
   
 End If
 
